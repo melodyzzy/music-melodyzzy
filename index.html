@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>melodyzzy的秘密音乐库</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function getRandomImage() {
+            var images = ['bg1.jpg', 'bg2.jpg', 'bg3.jpg'];
+            return images[Math.floor(Math.random() * images.length)];
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var randomImage = getRandomImage();
+            document.body.style.backgroundImage = 'url(' + randomImage + ')';
+            window.randomBackground = randomImage; 
+        });
+
+        function openLinks(module) {
+            var selectedLinks = linksData[module];
+            var linkString = JSON.stringify(selectedLinks);
+            var randomImage = window.randomBackground;
+            window.location.href = 'links.html?data=' + encodeURIComponent(linkString) + '&background=' + encodeURIComponent(randomImage);
+        }
+    </script>
+    <script src="links-data.js"></script>
+</head>
+<body>
+    <div class="button-container">
+        <button class="button" onclick="openLinks('qq')">QQ Music</button>
+    </div>
+    <div class="button-container">
+        <button class="button" onclick="openLinks('netease')">NetEase Music</button>
+    </div>
+    <div class="button-container">
+        <button class="button" onclick="openLinks('youtube')">YouTube Music</button>
+    </div>
+</body>
+</html>

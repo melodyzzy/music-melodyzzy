@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音乐宝藏库</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var params = new URLSearchParams(window.location.search);
+            var data = params.get('data');
+            var background = params.get('background');
+            if (background) {
+                document.body.style.backgroundImage = 'url(' + background + ')';
+            }
+            if (data) {
+                var links = JSON.parse(data);
+                var container = document.getElementById('links-container');
+                links.forEach(function(link) {
+                    var a = document.createElement('a');
+                    a.href = link.url;
+                    a.target = '_blank';
+                    a.className = 'button'; 
+                    a.textContent = link.name;
+                    container.appendChild(a);
+                });
+            }
+        });
+    </script>
+    <script src="links-data.js"></script>
+</head>
+<body>
+    <div id="links-container" class="button-container"></div>
+    <button class="back-button" onclick="window.history.back()">返回</button>
+</body>
+</html>
