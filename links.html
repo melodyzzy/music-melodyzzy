@@ -16,21 +16,44 @@
             if (data) {
                 var links = JSON.parse(data);
                 var container = document.getElementById('links-container');
+                var audioPlayer = document.createElement('audio');
+                audioPlayer.id = 'audio-player';
+                audioPlayer.controls = true;
+                audioPlayer.loop = true; // Enable loop
+                container.appendChild(audioPlayer);
+                var audioSource = document.createElement('source');
+                audioSource.id = 'audio-source';
+                audioSource.type = 'audio/mpeg';
+                audioPlayer.appendChild(audioSource);
+    
                 links.forEach(function(link) {
                     var a = document.createElement('a');
                     a.href = link.url;
                     a.target = '_blank';
                     a.className = 'button'; 
                     a.textContent = link.name;
+                    a.addEventListener('click', function(event) {
+                        event.preventDefault(); // Prevent default link behavior
+                        audioSource.src = link.url; // Set audio source
+                        audioPlayer.load(); // Load the new audio
+                        audioPlayer.play(); // Play the new audio
+                    });
                     container.appendChild(a);
                 });
             }
         });
     </script>
+    
     <script src="links-data.js"></script>
 </head>
 <body>
     <div id="links-container" class="button-container"></div>
     <button class="back-button" onclick="window.history.back()">返回</button>
+    <audio id="audio-player" controls loop>
+        <source id="audio-source" src="" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <script src="links-data.js"></script>
 </body>
+
 </html>
