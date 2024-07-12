@@ -52,3 +52,18 @@ body {
     cursor: pointer;
     border-radius: 5px;
 }
+
+/* 新增音频控制面板的样式 */
+#control-panel {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+audio {
+    width: 80%;
+}

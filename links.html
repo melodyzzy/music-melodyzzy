@@ -16,16 +16,23 @@
             if (data) {
                 var links = JSON.parse(data);
                 var container = document.getElementById('links-container');
+                
+                // 创建音频播放器元素
                 var audioPlayer = document.createElement('audio');
                 audioPlayer.id = 'audio-player';
                 audioPlayer.controls = true;
-                audioPlayer.loop = true; // Enable loop
-                container.appendChild(audioPlayer);
+                audioPlayer.loop = true; // 启用循环播放
+                
+                var controlPanel = document.createElement('div');
+                controlPanel.id = 'control-panel';
+                document.body.appendChild(controlPanel);
+                controlPanel.appendChild(audioPlayer);
+                
                 var audioSource = document.createElement('source');
                 audioSource.id = 'audio-source';
                 audioSource.type = 'audio/mpeg';
                 audioPlayer.appendChild(audioSource);
-    
+
                 links.forEach(function(link) {
                     var a = document.createElement('a');
                     a.href = link.url;
@@ -33,27 +40,20 @@
                     a.className = 'button'; 
                     a.textContent = link.name;
                     a.addEventListener('click', function(event) {
-                        event.preventDefault(); // Prevent default link behavior
-                        audioSource.src = link.url; // Set audio source
-                        audioPlayer.load(); // Load the new audio
-                        audioPlayer.play(); // Play the new audio
+                        event.preventDefault(); // 阻止默认链接行为
+                        audioSource.src = link.url; // 设置音频源
+                        audioPlayer.load(); // 加载新的音频
+                        audioPlayer.play(); // 播放新的音频
                     });
                     container.appendChild(a);
                 });
             }
         });
     </script>
-    
     <script src="links-data.js"></script>
 </head>
 <body>
     <div id="links-container" class="button-container"></div>
     <button class="back-button" onclick="window.history.back()">返回</button>
-    <audio id="audio-player" controls loop>
-        <source id="audio-source" src="" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    <script src="links-data.js"></script>
 </body>
-
 </html>
