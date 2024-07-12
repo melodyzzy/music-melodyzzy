@@ -1,20 +1,26 @@
 body {
-    background-size: cover;
+    background-size: cover; /* 背景图片的尺寸 覆盖 */
     background-position: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: calc(100vh - 100px); /* 减去上下总共的间距 */
+    height: 100vh; /* 使用全高 */
     margin: 0;
-    padding-top: 240px; /* 距离顶部 150px */
-    padding-bottom: 240px; /* 距离底部 150px */
+    padding-top: 150px; /* 距离顶部 150px */
+    padding-bottom: 200px; /* 增加底部的填充距离，以确保不会被进度条覆盖 */
     text-align: center;
     color: purple;
+    box-sizing: border-box;
 }
 
 .button-container {
     margin: 20px;
+    width: 100%; /* 确保容器占满可用宽度 */
+    flex: 1; /* 使按钮容器占据剩余空间 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* 确保按钮容器从顶部开始排列 */
 }
 
 .button {
@@ -56,27 +62,25 @@ body {
     z-index: 1000; /* 确保按钮在最上层 */
 }
 
-/* 新增音频控制面板的样式 */
 #control-panel {
     position: fixed;
     bottom: 20px;
-    width: 80%;
+    left: 20px; /* 放置在左下角 */
+    width: 300px; /* 缩小宽度 */
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    z-index: 500; /* 确保控制面板位于返回按钮之下 */
-    margin-bottom: 10px; /* 距离底部 50px */
-}
-
-#control-panel {
-    position: fixed;
-    bottom: 20px;
-    width: 80%;
-    text-align: center;
-    background-color: transparent; /* 确保背景透明 */
+    background-color: transparent; /* 背景透明 */
     padding: 10px;
     box-shadow: none; /* 移除阴影 */
     z-index: 500; /* 确保控制面板位于返回按钮之下 */
-    margin-bottom: 10px; /* 距离底部 10px */
+}
+
+#audio-player {
+    width: 100%; /* 调整播放器宽度以适应父容器 */
+    background: transparent; /* 确保播放器背景透明 */
+    box-shadow: none; /* 移除阴影 */
+}
+
+.bottom-spacer {
+    height: 100px; /* 添加的空白填充高度 */
+    flex-shrink: 0;
 }
