@@ -5,8 +5,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: calc(100vh - 100px); /* 减去上下总共的间距 */
     margin: 0;
+    padding-top: 240px; /* 距离顶部 150px */
+    padding-bottom: 240px; /* 距离底部 150px */
     text-align: center;
     color: purple;
 }
@@ -16,7 +18,7 @@ body {
 }
 
 .button {
-    background-color: rgba(0, 0, 0, 0.7); /* 使用更深的背景颜色 */
+    background-color: rgba(80, 13, 235, 0.7); /* 使用更深的背景颜色 */
     border: none;
     color: white; /* 将文字颜色改为白色以便在深色背景上更清晰 */
     padding: 20px 40px; /* 增加按钮的填充以放大 */
@@ -39,7 +41,7 @@ body {
 
 .back-button {
     position: fixed;
-    bottom: 80px; /* 将按钮上移以避开进度条 */
+    bottom: 50px; /* 将按钮上移以避开进度条 */
     right: 20px;
     background-color: rgba(0, 0, 0, 0.7);
     border: none;
@@ -58,14 +60,23 @@ body {
 #control-panel {
     position: fixed;
     bottom: 20px;
-    width: 100%;
+    width: 80%;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.7);
     padding: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     z-index: 500; /* 确保控制面板位于返回按钮之下 */
+    margin-bottom: 10px; /* 距离底部 50px */
 }
 
-audio {
+#control-panel {
+    position: fixed;
+    bottom: 20px;
     width: 80%;
+    text-align: center;
+    background-color: transparent; /* 确保背景透明 */
+    padding: 10px;
+    box-shadow: none; /* 移除阴影 */
+    z-index: 500; /* 确保控制面板位于返回按钮之下 */
+    margin-bottom: 10px; /* 距离底部 10px */
 }
