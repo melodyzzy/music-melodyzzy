@@ -38,8 +38,8 @@ body {
 }
 
 .back-button {
-    position: absolute;
-    bottom: 20px;
+    position: fixed;
+    bottom: 80px; /* 将按钮上移以避开进度条 */
     right: 20px;
     background-color: rgba(0, 0, 0, 0.7);
     border: none;
@@ -51,6 +51,7 @@ body {
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
+    z-index: 1000; /* 确保按钮在最上层 */
 }
 
 /* 新增音频控制面板的样式 */
@@ -62,6 +63,7 @@ body {
     background-color: rgba(0, 0, 0, 0.7);
     padding: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 500; /* 确保控制面板位于返回按钮之下 */
 }
 
 audio {
