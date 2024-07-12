@@ -3,6 +3,7 @@ const linksData = {
         { name: '3 Strikes(Explicit)', url: '3 Strikes(Explicit).mp3' },
         { name: '冬眠·2023', url: '冬眠·2023.mp3' },
         { name: '如果爱忘了(Live)', url: '如果爱忘了(Live).mp3' },
+        { name: '一程山水', url: '一程山水.mp3' },
         { name: '我想念', url: '我想念.mp3' },
         { name: '兰亭序', url: '兰亭序.mp3' },
         { name: '起风了', url: '起风了.mp3' },
@@ -21,6 +22,7 @@ const linksData = {
     ],
     'youtube': [
         { name: 'Meant To Be', url: 'Meant To Be.mp3' },
+        { name: 'Diamonds', url: 'Diamonds.mp3' },
         { name: 'I Took A Pill In Ibiza (Seeb Remix)', url: 'I Took A Pill In Ibiza (Seeb Remix).mp3' }
     ]
 };
