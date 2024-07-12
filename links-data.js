@@ -9,6 +9,11 @@ const linksData = {
         { name: '起风了', url: 'qqmusic/起风了.mp3' },
         { name: '光年之外', url: 'qqmusic/光年之外.mp3' },
         { name: 'All For Love', url: 'qqmusic/All For Love.mp3' },
+        { name: '麦恩莉', url: 'qqmusic/麦恩莉.mp3' },
+        { name: '写不完的温柔', url: 'qqmusic/写不完的温柔.mp3' },
+        { name: '最初的记忆', url: 'qqmusic/最初的记忆.mp3' },
+        { name: '夜空中最亮的星', url: 'qqmusic/夜空中最亮的星.mp3' },
+        { name: '暮色回响', url: 'qqmusic/暮色回响.mp3' },
         { name: 'Blue', url: 'qqmusic/Blue.mp3' },
         { name: 'Way Back Home', url: 'qqmusic/Way Back Home.mp3' }
     ],
